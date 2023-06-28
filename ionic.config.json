@@ -1,0 +1,8 @@
+{
+  "name": "Steps Check",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "438de092"
+}
