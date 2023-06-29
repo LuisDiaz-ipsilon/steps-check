@@ -1,5 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StepsComponent } from './components/steps/steps.component';
+import { InfoComponent } from './components/info/info.component';
 
 @Component({
   selector: 'app-folder',
@@ -9,9 +11,24 @@ import { ActivatedRoute } from '@angular/router';
 export class FolderPage implements OnInit {
   public folder!: string;
   private activatedRoute = inject(ActivatedRoute);
-  constructor() {}
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    console.log(this.folder)
+    
   }
+
+  getComponent() {
+    switch (this.folder) {
+      case 'steps':
+        return StepsComponent;
+      case 'info':
+        return InfoComponent;
+      default:
+        return null;
+    }
+  }
+  
 }
