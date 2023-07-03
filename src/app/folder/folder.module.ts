@@ -9,13 +9,18 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 import { FolderPage } from './folder.page';
 import { StepsComponent } from './components/steps/steps.component';
 import { InfoComponent } from './components/info/info.component';
+import { NgxChartsModule} from '@swimlane/ngx-charts';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    FolderPageRoutingModule,
+    NgxChartsModule,
   ],
   declarations: [FolderPage, StepsComponent, InfoComponent]
 })
