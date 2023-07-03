@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Color, ScaleType } from '@swimlane/ngx-charts';
+import { HealthService } from '../../services/health.service';
+import { HealthData } from '../../interfaces/HealthData-Interface';
 
 @Component({
   selector: 'app-steps',
@@ -9,8 +11,11 @@ import { Color, ScaleType } from '@swimlane/ngx-charts';
 })
 export class StepsComponent  implements OnInit {
 
+  single : any;
 
-  view: [number, number] = [500, 250];
+  view: [number, number] = [0,400];
+  max: number = 500;
+  
   legend: boolean = true;
   legendPosition: any = 'below';
 
@@ -20,17 +25,6 @@ export class StepsComponent  implements OnInit {
     selectable: true, 
     name: 'Customer Usage', 
   };
-
-  single = [
-    {
-      "name": "Germany",
-      "value": 100
-    }
-  ];
-
-  constructor() {
-    //Object.assign(this, { this.single });
-  }
 
   onSelect(data : any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
@@ -44,6 +38,12 @@ export class StepsComponent  implements OnInit {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
-  ngOnInit() {}
+  constructor(private healthService: HealthService) {
+    //Object.assign(this, { single });
+  }
+
+  ngOnInit() {
+    this.single = this.healthService.getPasos();
+  }
 
 }

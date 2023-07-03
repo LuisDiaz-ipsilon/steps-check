@@ -1,16 +1,15 @@
-<ion-content class="ion-padding">
-
+<ion-content >
+  <h1 class="ion-padding" >Pasos del dia de hoy</h1>
   <ngx-charts-gauge
-    [view]="view"
     [scheme]="colorScheme"
     [results]="single"
     [legendPosition]="legendPosition"
     [legend]="false"
+    [max]= "max"
     (select)="onSelect($event)"
     (activate)="onActivate($event)"
     (deactivate)="onDeactivate($event)"
   >
   </ngx-charts-gauge>
-  <br><h1>Pasos del dia de hoy</h1>
 
 </ion-content>
