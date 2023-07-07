@@ -8,16 +8,20 @@ import { getHealthData } from 'src/app/utils/health-plugin';
 })
 export class HealthService {
 
+
   constructor() { }
 
   getPasos() :HealthData[]{
 
-    //codigo para obtener del Plugin la cantidad de pasos
-    getHealthData()
+      getHealthData()
 
-    return [{
-      name: 'Pasos',
-      value: 399
-    }];
+      return [{
+        name : "Steps",
+        value: 0
+      }];
+
+    
+    
   }
+  
 }

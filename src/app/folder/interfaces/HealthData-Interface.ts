@@ -1,8 +1,9 @@
 export interface HealthData {
-    name: string;
+    name: string
     value: number;
 }
 
 export interface HealthDataResponse{
-    count: number
+    name? : string,
+    count?: number
 }
