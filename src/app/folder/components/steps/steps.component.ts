@@ -43,7 +43,14 @@ export class StepsComponent  implements OnInit {
   }
 
   ngOnInit() {
-    this.single = this.healthService.getPasos();
+    this.healthService.openAppSettingsApp();
+    this.healthService.checkPermissionApp();
+    this.healthService.getPasos().then(data => {
+      this.single = data;
+    }).catch(error => {
+      // handle error here
+      console.error(error);
+    });
   }
 
 }
