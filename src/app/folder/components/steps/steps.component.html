@@ -1,15 +1,17 @@
-<ion-content >
-  <h1 class="ion-padding" >Pasos del dia de hoy</h1>
+<ion-content>
+  <div class="ion-padding ion-flex">
+    <h1 class="ion-flex-start">Pasos del dia de hoy</h1>
+    <ion-button class="ion-flex-end" (click)="updateDataSteps()">Actualizar</ion-button>
+  </div>
   <ngx-charts-gauge
     [scheme]="colorScheme"
     [results]="single"
     [legendPosition]="legendPosition"
     [legend]="false"
-    [max]= "max"
+    [max]="max"
     (select)="onSelect($event)"
     (activate)="onActivate($event)"
     (deactivate)="onDeactivate($event)"
   >
   </ngx-charts-gauge>
-
 </ion-content>

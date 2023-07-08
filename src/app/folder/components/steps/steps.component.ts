@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Color, ScaleType } from '@swimlane/ngx-charts';
 import { HealthService } from '../../services/health.service';
-import { HealthData } from '../../interfaces/HealthData-Interface';
+import { CheckPermissionResult, HealthData } from '../../interfaces/HealthData-Interface';
 
 @Component({
   selector: 'app-steps',
@@ -38,13 +38,25 @@ export class StepsComponent  implements OnInit {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
+  updateDataSteps(){
+    this.healthService.getPasos().then(data => {
+      this.single = data;
+    }).catch(error => {
+      // handle error here
+      console.error(error);
+    });
+  }
+
   constructor(private healthService: HealthService) {
     //Object.assign(this, { single });
   }
 
+
   ngOnInit() {
-    this.healthService.openAppSettingsApp();
-    this.healthService.checkPermissionApp();
+
+    this.healthService.getPermissionState(); 
+
+
     this.healthService.getPasos().then(data => {
       this.single = data;
     }).catch(error => {
