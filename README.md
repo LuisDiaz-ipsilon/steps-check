@@ -1,5 +1,5 @@
 # Steps Check :walking:
-##Ionic App 
+Ionic App 
 
 Esta es una aplicación Ionic que utiliza un [plugin de Capacitor](https://www.npmjs.com/package/health-data) para acceder al sensor de conteo de pasos en dispositivos Android y mostrar la cantidad de pasos realizados por el usuario.
 
