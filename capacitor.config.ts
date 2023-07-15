@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'mx.uanl.cdis',
   appName: 'Steps Check',
   webDir: 'www',
   server: {
