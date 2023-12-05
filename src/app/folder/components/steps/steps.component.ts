@@ -44,6 +44,7 @@ export class StepsComponent  implements OnInit {
 
   ngOnInit() {
     this.single = this.healthService.getPasos();
+    console.log(this.single);
   }
 
 }

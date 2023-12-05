@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StepsComponent } from './components/steps/steps.component';
 import { InfoComponent } from './components/info/info.component';
+import { HealthConnectComponent } from './components/health-connect/health-connect.component';
 
 @Component({
   selector: 'app-folder',
@@ -16,7 +17,6 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
-    console.log(this.folder)
     
   }
 
@@ -26,6 +26,8 @@ export class FolderPage implements OnInit {
         return StepsComponent;
       case 'info':
         return InfoComponent;
+      case 'health-connect':
+        return HealthConnectComponent;
       default:
         return null;
     }

@@ -10,9 +10,9 @@ import { FolderPage } from './folder.page';
 import { StepsComponent } from './components/steps/steps.component';
 import { InfoComponent } from './components/info/info.component';
 import { NgxChartsModule} from '@swimlane/ngx-charts';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HealthConnectComponent } from './components/health-connect/health-connect.component';
 
 @NgModule({
   imports: [
@@ -22,6 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FolderPageRoutingModule,
     NgxChartsModule,
   ],
-  declarations: [FolderPage, StepsComponent, InfoComponent]
+  declarations: [FolderPage, StepsComponent, InfoComponent, HealthConnectComponent]
 })
 export class FolderPageModule {}

@@ -4,5 +4,20 @@ export interface HealthData {
 }
 
 export interface HealthDataResponse{
-    count: number
+    name? : string,
+    count?: number
+    hr?: number
+    value? : string
+}
+
+export interface HealthConnect {
+    hr: number
+}
+
+export interface CheckPermissionResult{
+    granted? : boolean,
+    denied? : boolean,
+    asked? : boolean,
+    restricted? : boolean, //IOs Only use
+    unknown? : boolean //IOs Only use
 }
