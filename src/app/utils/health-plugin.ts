@@ -2,10 +2,9 @@ import { HealthDataPlugin } from "health-data"
 import { CheckPermissionResult, HealthDataResponse } from "../folder/interfaces/HealthData-Interface";
 
 export const echo = async (): Promise<HealthDataResponse> => {
-    console.log("Mensaje ECHO 2")
     let options = {value : "Hola"}
     const response: HealthDataResponse = await HealthDataPlugin.echo(options);
-    console.log(response.value+" Del plugin")
+    
     return response;
 };
 

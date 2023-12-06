@@ -12,8 +12,9 @@ export class HealthService {
 
   async echos(): Promise<HealthDataResponse[]>{
     const res = await echo();
+    console.log(res.value)
     return [{
-      value :  res.value || "Echo TESTING " 
+      value :  res.value || 'Echo Testing'
     }];
   }
 

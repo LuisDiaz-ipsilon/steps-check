@@ -18,15 +18,20 @@ export class HealthConnectComponent  implements OnInit {
 
   ngOnInit() {
 
-    this.echoT = this.healthService.echos();
+    this.healthService.echos().then(data => {
+      console.log("data3: "+data[0].value)
+      this.echoT = data[0].value;
+    }).catch(error => {
+      // handle error here
+      console.error(error);
+    });
 
-    console.log("Solicitud de permiso")
     //this.healthService.getPermissionState();
     //console.log(this.healthService.getPermissionState());
 
 
     this.healthService.getHR().then(data => {
-      this.hearRate = data;
+      this.hearRate = data[0].hr;
     }).catch(error => {
       // handle error here
       console.error(error);
