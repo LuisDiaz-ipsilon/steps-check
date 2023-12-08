@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CheckPermissionResult, HealthConnect, HealthData, HealthDataResponse } from '../interfaces/HealthData-Interface';
-import { echo, /*checkPermission, getHealthConnect, getHealthData */} from 'src/app/utils/health-plugin';
+import { checkPermission, echo, /*checkPermission, getHealthConnect, getHealthData */} from 'src/app/utils/health-plugin';
 
 
 @Injectable({
@@ -12,7 +12,6 @@ export class HealthService {
 
   async echos(): Promise<HealthDataResponse[]>{
     const res = await echo();
-    console.log(res.value)
     return [{
       value :  res.value || 'Echo Testing'
     }];
@@ -40,10 +39,11 @@ export class HealthService {
 
   }
 
-  /*async getPermissionState(): Promise<CheckPermissionResult>{
+  async getPermissionState(): Promise<CheckPermissionResult>{
     const permission = await checkPermission();
+    console.log("Granted?: "+permission.granted)
     return permission;
-  }*/
+  }
   
 
 }

@@ -29,7 +29,6 @@
     "@capacitor/status-bar": "5.0.4",
     "@ionic/angular": "^7.0.0",
     "@swimlane/ngx-charts": "^20.4.1",
-    "health-data": "file:../health-data",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

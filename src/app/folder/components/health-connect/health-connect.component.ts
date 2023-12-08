@@ -14,21 +14,24 @@ export class HealthConnectComponent  implements OnInit {
   sleep: string = 'Buena-testing';
   echoT: any = 'Echo TESTING'
 
-  constructor(private healthService: HealthService) { }
+  constructor(private healthService: HealthService) {  }
 
   ngOnInit() {
 
     this.healthService.echos().then(data => {
-      console.log("data3: "+data[0].value)
       this.echoT = data[0].value;
     }).catch(error => {
       // handle error here
       console.error(error);
     });
 
-    //this.healthService.getPermissionState();
-    //console.log(this.healthService.getPermissionState());
-
+    this.healthService.getPermissionState().then(data => {
+      console.log("data check permission: "+ data.granted)
+    }).catch(error => {
+      // handle error here
+      console.error(error);
+    });
+    
 
     this.healthService.getHR().then(data => {
       this.hearRate = data[0].hr;
