@@ -26,7 +26,7 @@ export class HealthConnectComponent  implements OnInit {
     });
 
     this.healthService.getPermissionState().then(data => {
-      console.log("data check permission: "+ data.granted)
+      console.log("? data check permission: "+ data.granted)
     }).catch(error => {
       // handle error here
       console.error(error);

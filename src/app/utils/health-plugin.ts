@@ -4,16 +4,22 @@ import { CheckPermissionResult, HealthDataResponse } from "../folder/interfaces/
 export const echo = async (): Promise<HealthDataResponse> => {
     let options = {value : "Hola"}
     const response: HealthDataResponse = await HealthDataPlugin.echo(options);
-    console.log(response.value)
     
     return response;
 };
+
+export const getHR = async (): Promise<HealthDataResponse>  => {
+    const response : HealthDataResponse = await HealthDataPlugin.getHR();
+    console.log("health plugin front hr:"+response.hr);
+    return response;
+}
+
 
 export const checkPermission = async (): Promise<CheckPermissionResult> => {
     let options = {force: true}
     console.log("Check permission plugin")
     const permission: CheckPermissionResult = await HealthDataPlugin.checkPermission(options);
-    console.log("Check permission plugin" + permission)
+    console.log("Check permission plugin" + permission.granted)
     if (!permission.granted) {
             //Setting force to true causes the permission to be requested.
             const result: CheckPermissionResult = await HealthDataPlugin.checkPermission({ force: true });
